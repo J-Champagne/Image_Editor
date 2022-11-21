@@ -7,7 +7,7 @@ Uses low-level manipulations with no additional libraries.
 Although only the functions of copying and converting to grayscale are available,
 efforts were made to make this software modular. Additional functionalities can be added with relative ease.
 
-To run this software, simply type `make` in your terminal followed by `./img_editor.exe` followed by the appropriate commands.
+To run this software, simply type `make` in your terminal followed by `./img_editor.exe` with by the appropriate commands.
 An image for testing 'bmp_24.bmp' has been added for convenience.
 
 ## Manual
