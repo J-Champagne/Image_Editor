@@ -4,7 +4,7 @@ This C++ CLI software can edit images from your terminal.
 
 Uses low-level manipulations with no additional libraries.
 
-Although only the functions of copying and converting to grayscale are available,
+Although only copying and converting to grayscale are available,
 efforts were made to make this software modular. Additional functionalities can be added with relative ease.
 
 To run this software, simply type `make` in your terminal followed by `./img_editor.exe` with by the appropriate commands.
