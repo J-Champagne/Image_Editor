@@ -43,3 +43,23 @@ int Image_readerBMP::grayScale() {
 
     return 0; 
 }
+
+int Image_readerBMP::brightness(int bright) {
+    if (this->bpp != 24) {return 1;} 
+    unsigned char* image = (unsigned char*) &this->getData()[this->getOffsetPixel()];
+    int color = 0;
+    
+    for (int i = 0; i < this->getSize() - this->getOffsetPixel(); i++) {
+        color = image[i] + bright;
+        if (color > 255) {color = 255;}
+        else if (color < 0) {color = 0;}
+        
+        image[i] = color;
+    }
+
+    return 0;
+}
+
+
+
+

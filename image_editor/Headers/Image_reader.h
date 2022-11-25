@@ -18,6 +18,7 @@ class Image_reader {
 	
         void write();
         virtual int grayScale();
+        virtual int brightness(int);
 
 	protected:
         int width = -1; 

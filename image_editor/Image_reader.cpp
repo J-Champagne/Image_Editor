@@ -71,3 +71,5 @@ int Image_reader::getIntFromData(int offset) {
 }
 
 int Image_reader::grayScale() {return 1;}
+
+int Image_reader::brightness(int) {return 1;}

@@ -18,6 +18,7 @@ class Image_readerBMP : public Image_reader {
 
         void getHeaderInfo();	
         int grayScale();
+        int brightness(int);
 
 	private:
         int offsetSize = 2;

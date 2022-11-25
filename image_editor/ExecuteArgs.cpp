@@ -42,7 +42,8 @@ Image_reader* ExecuteArgs::getReaderFromFileName(std::string fileName, std::stri
 }
 
 void ExecuteArgs::execute() {
-    if (this->commands[1] == 1) {
+    //Grayscale
+    if (this->commands[1] != 0) {
         int status = this->img_read->grayScale();
         if (status == 1) {
             std::cout << "Error, only 24 bit bmp images are supported " 
@@ -52,7 +53,19 @@ void ExecuteArgs::execute() {
         }   
     }
 
-    if (this->commands[0] == 1) {
+    //Brightness
+    if (this->commands[2] != 0) {
+        int status = this->img_read->brightness(this->commands[2]);
+        if (status == 1) {
+            std::cout << "Error, only 24 bit bmp images are supported "
+            "for conversion to grayscale\n";
+        } else {
+            this->commands[0] = 1;
+        }
+    }
+
+    //Copy
+    if (this->commands[0] != 0) {
         this->img_read->write();
     }
 }
