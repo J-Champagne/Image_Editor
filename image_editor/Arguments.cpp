@@ -81,13 +81,13 @@ void Arguments::printMsg(int code) {
 }
 
 void Arguments::parseArgs() {
-	int argc = this->argc;
-	int commands[NUM_COMMS];
+    int argc = this->argc;
+    int commands[NUM_COMMS];
     int brightness = 0;
     std::size_t pos = 0;
-	std::vector<std::string_view> args = this->args;
-	std::string fileName = "";
-	std::string copyName = "";
+    std::vector<std::string_view> args = this->args;
+    std::string fileName = "";
+    std::string copyName = "";
     std::string temp = "";
     std::string_view arg;
 
@@ -100,32 +100,32 @@ void Arguments::parseArgs() {
 	for (int i = 0; i < argc; i++) {
 		arg = args[i];	
 
-		if (arg == "-h" || arg == "--help") {
+        if (arg == "-h" || arg == "--help") {
 			printMsg(10);
 			exit(0);
 		
-		} else if (arg == "-v" || arg == "--version") {
+        } else if (arg == "-v" || arg == "--version") {
 			printMsg(11);
 			exit(0);
 		
-		} else if (arg == "-f" || arg == "--file")  {
+        } else if (arg == "-f" || arg == "--file")  {
 			i++;
 			if (i >= argc) {
-				printMsg(3);
-				exit(3);
+                printMsg(3);
+                exit(3);
 			}
 			fileName = args[i];
 		
-		} else if (arg == "-o" || arg == "--output") {
-			i++;
+        } else if (arg == "-o" || arg == "--output") {
+            i++;
             if (i >= argc) {
                 printMsg(3);
                 exit(3);
             }
             copyName = args[i];
 
-		} else if (arg == "-c" || arg == "--copy") {
-			commands[0] = 1;
+        } else if (arg == "-c" || arg == "--copy") {
+            commands[0] = 1;
 
         } else if (arg == "-g" || arg == "--grey" || arg == "--gray") {
             commands[1] = 1;
@@ -153,11 +153,11 @@ void Arguments::parseArgs() {
             }
             commands[2] = brightness;
     
-		} else {
-			printMsg(4);
-			exit(4);
-		}
-	}
+        } else {
+            printMsg(4);
+            exit(4);
+        }
+    }
 
 	//Execute commands specified in args
 	ExecuteArgs* exec = new ExecuteArgs(commands, fileName, copyName);
