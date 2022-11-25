@@ -24,7 +24,7 @@ These are common commands used in various situations:
                    By default, '(copy)' is appended between the image name and it's format. Ex. image.bmp -> image(copy).bmp
 -c --copy          Copies the specified image.
 -g --grey --gray   Converts image to grayscale. Automatically creates a copy of the image. *Only 24 bit BMP images supported*
--b --brightness    Adjusts the brightness. Must be followed by an intergral.
+-b --brightness    Adjusts the brightness. Must be followed by an integral.
 
 ```
 
