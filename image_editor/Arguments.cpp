@@ -49,18 +49,18 @@ Arguments::~Arguments() {}
 void Arguments::printMsg(int code) {
 	std::string msg = "";
 	switch (code) {
-		case 1:
-			msg = TOO_MANY_MSG;
-			break;
-		case 2:
-			msg = TOO_FEW_MSG;
-			break;
-		case 3:
-			msg = NO_FILE_MSG;
-			break;
-		case 4:
-			msg = UNKNOWN_ARG_MSG;
-			break;
+        case 1:
+            msg = TOO_MANY_MSG;
+            break;
+        case 2:
+            msg = TOO_FEW_MSG;
+            break;
+        case 3:
+            msg = NO_FILE_MSG;
+            break;
+        case 4:
+            msg = UNKNOWN_ARG_MSG;
+            break;
         case 5:
             msg = NO_BRIGHTVAL_MSG;
             break;
@@ -71,13 +71,13 @@ void Arguments::printMsg(int code) {
             msg = OVER_BRIGHTVAL_MSG;
             break;
         case 10:
-			msg = HELP_MSG;
-			break;
-		case 11:
-			msg = VERSION_MSG;
-			break;
-	}
-	std::cout << msg << std::endl;
+            msg = HELP_MSG;
+            break;
+        case 11:
+            msg = VERSION_MSG;
+            break;
+    }
+    std::cout << msg << std::endl;
 }
 
 void Arguments::parseArgs() {
@@ -98,23 +98,23 @@ void Arguments::parseArgs() {
 
 	//Parses arguments and sets value of a command to 1 if present in args
 	for (int i = 0; i < argc; i++) {
-		arg = args[i];	
+        arg = args[i];	
 
         if (arg == "-h" || arg == "--help") {
-			printMsg(10);
-			exit(0);
+            printMsg(10);
+            exit(0);
 		
         } else if (arg == "-v" || arg == "--version") {
-			printMsg(11);
-			exit(0);
+            printMsg(11);
+            exit(0);
 		
         } else if (arg == "-f" || arg == "--file")  {
-			i++;
-			if (i >= argc) {
+            i++;
+            if (i >= argc) {
                 printMsg(3);
                 exit(3);
-			}
-			fileName = args[i];
+            }
+            fileName = args[i];
 		
         } else if (arg == "-o" || arg == "--output") {
             i++;
