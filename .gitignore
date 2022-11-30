@@ -2,7 +2,7 @@
 *.exe
 CMake*
 *.swp
-.DS_Store
+*.DS_Store
 .vs/
 .vscode/
 image_compression/CMakeLists.txt
